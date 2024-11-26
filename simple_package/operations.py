@@ -22,6 +22,8 @@
 ## involve complicated operations (e.g., trigonometric
 ## functions, logarithms, etc.).
 
+import numpy as np
+
 def add(a, b):
     """Add two numbers."""
     return a + b
@@ -38,6 +40,25 @@ def divide(a, b):
     """Divide one number by another."""
     return a / b
 
+def power(a, b):
+    """Raise a to the power of b."""
+    return a ** b
+
+def log(a, b):
+    """Take the logarithm of a with base b."""
+    return np.log(a) / np.log(b)
+
+def sin(a):
+    """Take the sine of a."""
+    return np.sin(a)
+
+def cos(a):
+    """Take the cosine of a."""
+    return np.cos(a)
+
+def tan(a):
+    """Take the tangent of a."""
+    return np.tan(a)
 
 def which_operation():
     operation = ""
@@ -72,6 +93,38 @@ def which_operation():
                 print(f"The quotient of {a} and {b} is {divide(a,b)}")
             except:
                 print("Error: Please enter valid numbers.")
+        elif operation == "power":
+            try:
+                a = float(input("Enter the base: "))
+                b = float(input("Enter the exponent: "))
+                print(f"{a} raised to the power of {b} is {power(a,b)}")
+            except:
+                print("Error: Please enter valid numbers.")
+        elif operation == "log":
+            try:
+                a = float(input("Enter the number: "))
+                b = float(input("Enter the base: "))
+                print(f"The logarithm of {a} with base {b} is {log(a,b)}")
+            except:
+                print("Error: Please enter valid numbers.")
+        elif operation == "sin":
+            try:
+                a = float(input("Enter the angle in radians: "))
+                print(f"The sine of {a} is {sin(a)}")
+            except:
+                print("Error: Please enter a valid number.")
+        elif operation == "cos":
+            try:
+                a = float(input("Enter the angle in radians: "))
+                print(f"The cosine of {a} is {cos(a)}")
+            except:
+                print("Error: Please enter a valid number.")
+        elif operation == "tan":
+            try:
+                a = float(input("Enter the angle in radians: "))
+                print(f"The tangent of {a} is {tan(a)}")
+            except:
+                print("Error: Please enter a valid number.")
         elif operation == "exit":
             return None
         else:
