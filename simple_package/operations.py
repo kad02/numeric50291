@@ -37,3 +37,43 @@ def multiply(a, b):
 def divide(a, b):
     """Divide one number by another."""
     return a / b
+
+
+def which_operation():
+    operation = ""
+    while operation != "exit":
+        print("Which operation would you like to perform? (add, subtract, multiply, divide, exit)")
+        operation = input().lower()
+        if operation == "add":
+            try:
+                a = float(input("Enter the first number: "))
+                b = float(input("Enter the second number: "))
+                print(f"The sum of {a} and {b} is {add(a,b)}")
+            except:
+                print("Error: Please enter valid numbers.")
+        elif operation == "subtract":
+            try:
+                a = float(input("Enter the first number: "))
+                b = float(input("Enter the second number: "))
+                print(f"The difference of {a} and {b} is {subtract(a,b)}")
+            except:
+                print("Error: Please enter valid numbers.")
+        elif operation == "multiply":
+            try:
+                a = float(input("Enter the first number: "))
+                b = float(input("Enter the second number: "))
+                print(f"The product of {a} and {b} is {multiply(a,b)}")
+            except:
+                print("Error: Please enter valid numbers.")
+        elif operation == "divide":
+            try:
+                a = float(input("Enter the first number: "))
+                b = float(input("Enter the second number: "))
+                print(f"The quotient of {a} and {b} is {divide(a,b)}")
+            except:
+                print("Error: Please enter valid numbers.")
+        elif operation == "exit":
+            return None
+        else:
+            print("Error: Please enter a valid operation.")
+    return None

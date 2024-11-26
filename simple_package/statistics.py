@@ -20,3 +20,46 @@
 ##
 ## 5. Also, do something and/or throw an exception/message if the
 ##    numpy and matplotlib packages are not installed.
+
+
+import numpy as np
+
+def calculate_mean(data):
+    """Calculate the mean of a numpy array."""
+    if isinstance(data,(list)):
+        data = np.array(data)
+    elif isinstance(data,(np.ndarray)):
+        pass
+    else:
+        raise ValueError("Data must be a list or numpy array.")
+    
+    res = data.mean()
+    print(f"The mean of the data is {res}")
+    return res
+
+def calculate_median(data):
+    """Calculate the median of a numpy array."""
+    if isinstance(data,(list)):
+        data = np.array(data)
+    elif isinstance(data,(np.ndarray)):
+        pass
+    else:
+        raise ValueError("Data must be a list or numpy array.")
+    
+    res = np.median(data)
+    print(f"The median of the data is {res}")
+    return res
+
+def calculate_std(data):
+    """Calculate the standard deviation of a numpy array."""
+    if isinstance(data,(list)):
+        data = np.array(data)
+    elif isinstance(data,(np.ndarray)):
+        pass
+    else:
+        raise ValueError("Data must be a list or numpy array.")
+    
+    res = data.sd()
+    print(f"The median of the data is {res}")
+    return res
+
