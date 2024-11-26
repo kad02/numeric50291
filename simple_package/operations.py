@@ -63,7 +63,8 @@ def tan(a):
 def which_operation():
     operation = ""
     while operation != "exit":
-        print("Which operation would you like to perform? (add, subtract, multiply, divide, exit)")
+        print("Which operation would you like to perform?")
+        print("Add, Subtract, Multiply, Divide, Power, Log, Sin, Cos, Tan, Exit")
         operation = input().lower()
         if operation == "add":
             try:
