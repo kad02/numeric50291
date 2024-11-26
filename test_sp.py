@@ -20,6 +20,4 @@ if __name__ == '__main__':
 
     ## Define some data
     data = [1,2,3,4,5,6,7,8,9,10]
-
-    data = 5
     sp.plotData(data, sp.calculate_mean(data), sp.calculate_median(data))

@@ -46,6 +46,12 @@ def power(a, b):
 
 def log(a, b):
     """Take the logarithm of a with base b."""
+    # can take b as number of as e for ln
+    if isinstance(b, str):
+        if b.lower() == "e":
+            b = np.e
+    else:
+        b = float(b)
     return np.log(a) / np.log(b)
 
 def sin(a):
@@ -63,8 +69,8 @@ def tan(a):
 def which_operation():
     operation = ""
     while operation != "exit":
-        print("Which operation would you like to perform?")
-        print("Add, Subtract, Multiply, Divide, Power, Log, Sin, Cos, Tan, Exit")
+        print("\n\nWhich operation would you like to perform?")
+        print("Add, Subtract, Multiply, Divide, Power, Log, Sin, Cos, Tan, Exit\n\n")
         operation = input().lower()
         if operation == "add":
             try:
@@ -104,7 +110,7 @@ def which_operation():
         elif operation == "log":
             try:
                 a = float(input("Enter the number: "))
-                b = float(input("Enter the base: "))
+                b = input("Enter the base (number or 'e'): ")
                 print(f"The logarithm of {a} with base {b} is {log(a,b)}")
             except:
                 print("Error: Please enter valid numbers.")
